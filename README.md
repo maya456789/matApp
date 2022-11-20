@@ -31,3 +31,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2] Then run matAppNode using command 'nodemon app' or 'node app' .
 3] After that run athe matApp using ng serve -o.
 4]When we run matApp we dirrectly redirect to Login page.
+5]Use admin and admin123 ,username and password to login. 
+6]Then redirect  to dashboard.
+7]Dashboard having sidenave with Add product, add customer, add category add purchase add sell and Available stock menus.
+8] When we do Add Product it is store in Available Stock.
+9]And also when we do Add purchase it store in Available Stock.
+10]When do purchase available Stock increase and when do sale Available stock decrease.
