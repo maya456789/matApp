@@ -1,0 +1,61 @@
+
+
+
+
+
+<!-- Cards with media area -->
+
+  
+ 
+  
+ 
+  
+<mat-card class="example-card">
+   
+    <mat-toolbar color="primary">Add Customer</mat-toolbar>
+    <mat-card-content>
+        <mat-divider ></mat-divider>
+        <form [formGroup]="customerData">
+        <table>
+            
+        <tr fxLayout="column" fxLayout.gt-xs="row">  
+        <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Add Name field</mat-label>
+              <input matInput placeholder="Customer Name" formControlName="customer_name">
+            
+            </mat-form-field>
+        </td>
+          <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Add Address field</mat-label>
+              <input matInput placeholder="Customer address" formControlName="customer_address">
+              
+            </mat-form-field>
+        </td>
+        </tr>
+        <tr fxLayout="column" fxLayout.gt-xs="row">  
+            <td>
+                <mat-form-field appearance="outline">
+                  <mat-label>Add Mobile field</mat-label>
+                  <input matInput placeholder="Customer Mobile" formControlName="customer_mobile">
+                 
+                </mat-form-field>
+            </td>
+              <td>
+                <mat-form-field appearance="outline">
+                  <mat-label>Credit Limit field</mat-label>
+                  <input matInput placeholder="Add Credit Limit" formControlName="credit_limit">
+                 
+                </mat-form-field>
+            </td>
+            </tr>
+           
+        </table>
+        </form>
+        <mat-divider ></mat-divider>
+        <mat-card-actions align="end">
+            <button type="button" (click)="customerFormData(customerData)" mat-raised-button color="primary">Add</button>
+        </mat-card-actions>
+    </mat-card-content>
+  </mat-card>

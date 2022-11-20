@@ -1,0 +1,25 @@
+<!--<p>available-stock works!</p>
+<h2>{{getProduct | json}}</h2>-->
+<br>
+<h2>Available Stock</h2>
+<table border="1" rules="all">
+    <tr>
+        <th>Id</th>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Unit</th>
+        <th>Sale Price</th>
+        <th>MRP</th>
+    </tr>
+
+    <tr *ngFor="let product of getProduct">
+       <td>{{product.id}}</td>
+       <td>{{product.name}}</td>
+       <td>{{product.description}}</td>
+       <td>{{product.category}}</td>
+       <td>{{product.unit}}</td>
+       <td>{{product.sale_price | currency:'INR'}}</td>
+       <td>{{product.mrp | currency:'INR'}}</td>
+    </tr>
+</table>

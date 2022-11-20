@@ -1,0 +1,66 @@
+
+
+
+<br>
+<!--<table>
+    <tr>
+        <th>PID</th>
+        <th>PNO</th>
+        <th>PName</th>
+    </tr>
+    <tr *ngFor="let prod of product">
+         <td>{{prod.p_id}}</td>
+         <td>{{prod.p_no}}</td>
+         <td>{{prod.p_name}}</td>
+    </tr>
+</table><br>-->
+<!--On HomePage we achieve SPA-->
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" class="side">
+    
+    <mat-nav-list >
+      
+       <div class="top">
+        <mat-divider ></mat-divider>
+        <a mat-list-item [routerLink]="'add-product'"><span class="material-icons md-36">shopping_cart</span> Add Product </a>
+        <a mat-list-item [routerLink]="'add-customer'"><span class="material-icons md-36">person_add</span> Add Customer </a>
+        <a mat-list-item [routerLink]="'add-category'"><span class="material-icons md-36">category</span> Add Category </a>
+        <a mat-list-item [routerLink]="'add-purchase'"><span class="material-icons md-36">payments</span> Add Purchase </a>
+        <a mat-list-item [routerLink]="'add-sale'"><span class="material-icons md-36">shopping_bag</span> Add Sell </a>
+        
+        <a mat-list-item [routerLink]="'available-stock'"><span class="material-icons md-36">trolley</span> Available Stock</a>
+        
+    <!--   <a mat-list-item [routerLink]="'my-cart'"><span class="material-icons md-36">image</span> Card List </a>
+      <a mat-list-item [routerLink]="'my-product'"><span class="material-icons md-36">
+        navigate_next
+        </span> Table List </a>
+      <a mat-list-item [routerLink]="'dialog'"><span class="material-icons md-36">auto_awesome</span> Dialogs </a>
+      <a mat-list-item [routerLink]="'/create-contact'"><span class="material-icons md-36">contacts</span> Create Contact </a>
+      <a mat-list-item [routerLink]="'/activities'"><span class="material-icons md-36">add_business</span> Activities </a>
+      <a mat-list-item [routerLink]="'/create-activity'"><span class="material-icons md-36">storefront</span> Create Activity </a>
+      -->
+    </div>
+
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-toolbar color="primary">
+    <mat-icon (click)="drawer.toggle()">list</mat-icon>
+    <button mat-icon-button routerLink="./" class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon >dashboard</mat-icon>
+    </button>
+    <span>Dashboard </span>
+    <span class="example-spacer"></span>
+   
+    <button mat-icon-button title="Logout" (click)="onLogout()" class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <router-outlet></router-outlet>
+   
+  
+         
+</mat-drawer-container>
+

@@ -1,0 +1,48 @@
+
+
+
+
+
+
+<!-- Cards with media area -->
+
+  
+ 
+  
+ 
+  
+<mat-card class="example-card">
+   
+    <mat-toolbar color="primary">Add Category</mat-toolbar>
+    <mat-card-content>
+        <mat-divider ></mat-divider>
+        <form [formGroup]="categoryData">
+        <table>
+            
+        <tr fxLayout="column" fxLayout.gt-xs="row">  
+            <td>
+                <mat-form-field appearance="outline">
+                  <mat-label>Add Type field</mat-label>
+                  <input matInput placeholder="Category Type" formControlName="category_type">
+                  
+                </mat-form-field>
+            </td>
+        <td>
+            <mat-form-field appearance="outline">
+              <mat-label>Add Name field</mat-label>
+              <input matInput placeholder="Category Name" formControlName="category_name">
+            
+            </mat-form-field>
+        </td>
+         
+        </tr>
+       
+        </table>
+        </form>
+        <mat-divider ></mat-divider>
+        <mat-card-actions align="end">
+            <button type="button" (click)="categoryFormData(categoryData)" mat-raised-button color="primary">Add</button>
+        </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+

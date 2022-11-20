@@ -1,0 +1,24 @@
+
+<table border="1" rules="all">
+    <tr>
+        <th>Id</th>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Unit</th>
+        <th>Sale Price</th>
+        <th>MRP</th>
+        <th>Action</th>
+    </tr>
+
+    <tr *ngFor="let product of getProduct" (click)="saleProduct(product.id)">
+       <td>{{product.id}}</td>
+       <td>{{product.name}}</td>
+       <td>{{product.description}}</td>
+       <td>{{product.category}}</td>
+       <td>{{product.unit}}</td>
+       <td>{{product.sale_price | currency:'INR'}}</td>
+       <td>{{product.mrp | currency:'INR'}}</td>
+       <td><button type="button"  mat-raised-button color="primary">Sale</button></td>
+    </tr>
+</table>
