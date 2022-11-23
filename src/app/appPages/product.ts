@@ -1,10 +1,10 @@
 export interface Product {
     id: number;
-    product_product_name: string;
+    product_name: string;
     product_sale_price: number;
     product_mrp:number;
     product_description: string;
-    product_unit:number;
+    product_unit:string;
     product_category:string;
     
     
