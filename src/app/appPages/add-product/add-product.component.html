@@ -4,48 +4,48 @@
 
 <!-- Cards with media area -->
 
-  
- 
-  
- 
-  
+
+
+
+
+
   <mat-card class="example-card">
-   
+
     <mat-toolbar color="primary">Add Product</mat-toolbar>
     <mat-card-content>
         <mat-divider ></mat-divider>
         <form [formGroup]="productData">
         <table>
-            
-        <tr fxLayout="column" fxLayout.gt-xs="row">  
+
+        <tr fxLayout="column" fxLayout.gt-xs="row" >
         <td >
             <mat-form-field appearance="outline">
               <mat-label>Add Name field</mat-label>
               <input matInput placeholder="Product Name" formControlName="product_name">
-            
+
             </mat-form-field>
         </td>
           <td>
             <mat-form-field appearance="outline">
               <mat-label>Add Unit field</mat-label>
               <input matInput placeholder="Product Unit" formControlName="product_unit">
-              
+
             </mat-form-field>
         </td>
         </tr>
-        <tr fxLayout="column" fxLayout.gt-xs="row">  
+        <tr fxLayout="column" fxLayout.gt-xs="row">
             <td>
                 <mat-form-field appearance="outline">
                   <mat-label>Add Category field</mat-label>
                   <input matInput placeholder="Product Category" formControlName="product_category">
-                 
+
                 </mat-form-field>
             </td>
               <td>
                 <mat-form-field appearance="outline">
                   <mat-label>Sale Price field</mat-label>
                   <input matInput placeholder="Add Sale Price" formControlName="product_sale_price">
-                 
+
                 </mat-form-field>
             </td>
             </tr>
@@ -54,14 +54,14 @@
                     <mat-form-field appearance="outline">
                       <mat-label>MRP field</mat-label>
                       <input matInput placeholder="Add MRP" formControlName="product_mrp">
-                     
+
                     </mat-form-field>
                 </td>
           <td>
             <mat-form-field appearance="outline">
               <mat-label>Add Description field</mat-label>
               <textarea matInput class="rsize" placeholder="Add Description" formControlName="product_description"></textarea>
-              
+
             </mat-form-field>
         </td>
         </tr>
@@ -74,4 +74,3 @@
     </mat-card-content>
   </mat-card>
 
-  

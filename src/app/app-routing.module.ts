@@ -20,7 +20,8 @@ const routes: Routes = [
     {path:'add-category',component:AddCategoryComponent},
     {path:'add-purchase',component:AddPurchaseComponent},
     {path:'add-sale',component:AddSaleComponent},
-    {path:'available-stock',component:AvailableStockComponent}
+    {path:'available-stock',component:MyProductComponent},
+    {path:'mat-table',component:MyProductComponent}
   ]}
 ];
 

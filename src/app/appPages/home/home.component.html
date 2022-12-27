@@ -1,7 +1,6 @@
 
 
 
-<br>
 <!--<table>
     <tr>
         <th>PID</th>
@@ -17,10 +16,10 @@
 <!--On HomePage we achieve SPA-->
 
 <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side" class="side">
-    
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened="true" class="side">
+
     <mat-nav-list >
-      
+
        <div class="top">
         <mat-divider ></mat-divider>
         <a mat-list-item [routerLink]="'add-product'"><span class="material-icons md-36">shopping_cart</span> Add Product </a>
@@ -28,9 +27,11 @@
         <a mat-list-item [routerLink]="'add-category'"><span class="material-icons md-36">category</span> Add Category </a>
         <a mat-list-item [routerLink]="'add-purchase'"><span class="material-icons md-36">payments</span> Add Purchase </a>
         <a mat-list-item [routerLink]="'add-sale'"><span class="material-icons md-36">shopping_bag</span> Add Sell </a>
-        
+
         <a mat-list-item [routerLink]="'available-stock'"><span class="material-icons md-36">trolley</span> Available Stock</a>
-        
+        <a mat-list-item [routerLink]="'mat-table'"><span class="material-icons md-36">
+          navigate_next
+          </span> Table List </a>
     <!--   <a mat-list-item [routerLink]="'my-cart'"><span class="material-icons md-36">image</span> Card List </a>
       <a mat-list-item [routerLink]="'my-product'"><span class="material-icons md-36">
         navigate_next
@@ -52,15 +53,15 @@
     </button>
     <span>Dashboard </span>
     <span class="example-spacer"></span>
-   
+
     <button mat-icon-button title="Logout" (click)="onLogout()" class="example-icon" aria-label="Example icon-button with share icon">
       <mat-icon>logout</mat-icon>
     </button>
   </mat-toolbar>
 
   <router-outlet></router-outlet>
-   
-  
-         
+
+
+
 </mat-drawer-container>
 

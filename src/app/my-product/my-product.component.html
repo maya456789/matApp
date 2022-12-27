@@ -4,14 +4,14 @@
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
   </mat-form-field>
-  
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  
-  
+
+
      <!-- Checkbox Column -->
      <ng-container matColumnDef="select">
       <th mat-header-cell *matHeaderCellDef>
-       
+
       </th>
       <td mat-cell *matCellDef="let row">
         <mat-checkbox (click)="$event.stopPropagation()"
@@ -23,35 +23,57 @@
     </ng-container>
       <!--- Note that these columns can be defined in any order.
             The actual rendered columns are set as a property on the row definition" -->
-    
+
       <!-- Position Column -->
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.unit}} </td>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id. </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
       </ng-container>
-    
+
       <!-- Name Column -->
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <th mat-header-cell *matHeaderCellDef> Product Name </th>
         <td mat-cell *matCellDef="let element"> {{element.name}} </td>
       </ng-container>
-    
-      <!-- Weight Column -->
-      <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> Weight </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+
+       <!-- Name Column -->
+       <ng-container matColumnDef="sale_price">
+        <th mat-header-cell *matHeaderCellDef> Product_Sale_Price </th>
+        <td mat-cell *matCellDef="let element"> {{element.sale_price}} </td>
       </ng-container>
-    
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-      </ng-container>
-    
+     <!-- Name Column -->
+     <ng-container matColumnDef="mrp">
+      <th mat-header-cell *matHeaderCellDef> Product_mrp </th>
+      <td mat-cell *matCellDef="let element"> {{element.mrp}} </td>
+    </ng-container>
+   <!-- Name Column -->
+   <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Product_description </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+  </ng-container>
+ <!-- Name Column -->
+ <ng-container matColumnDef="unit">
+  <th mat-header-cell *matHeaderCellDef> Product_unit </th>
+  <td mat-cell *matCellDef="let element"> {{element.unit}} </td>
+</ng-container>
+ <!-- Name Column -->
+ <ng-container matColumnDef="category">
+  <th mat-header-cell *matHeaderCellDef> Product_category </th>
+  <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+</ng-container>
+
+<!--<ng-container matColumnDef="action">
+
+  <th mat-header-cell *matHeaderCellDef> Action </th>
+  <td mat-cell *matCellDef="let element"> <button mat-button>Purchase</button> </td>
+</ng-container>
+-->
+
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    
+
     <mat-paginator #paginator
                 [length]="100"
                 [pageSize]="5"

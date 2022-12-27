@@ -11,13 +11,13 @@ export class ProductService {
   constructor(private http:HttpClient) { }
 
   public addProduct(formData:any):Observable<any>{
-    return this.http.post(`${environment.API_AUTHENTICATEPRODUCT}`,formData)
+    return this.http.post(`${environment.API_ADD_PRODUCT}`,formData)
     .pipe(
       map((product: any) => {
         return product;
       })
     );
-    
+
   }
 
   public getProduct():Observable<any>{
@@ -30,7 +30,7 @@ export class ProductService {
 
   public deleteProduct(prodId:any):Observable<any>{
     console.log("pid at server :",prodId);
-   
+
     return this.http.post(`${environment.API_DELET_PRODUCT}`,{prodId}).pipe(
       map((resp)=>{
         return resp;
@@ -39,7 +39,7 @@ export class ProductService {
   }
 
   public addCategory(cData:any):Observable<any>{
-    
+
     return this.http.post(`${environment.API_ADD_CATEGORY}`,cData).pipe(
       map((resp)=>{
         return resp;
