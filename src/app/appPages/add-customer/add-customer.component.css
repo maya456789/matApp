@@ -9,11 +9,17 @@
   }
 
   table,tr,td{
-   
+
     padding-right:30px;
     padding-top: 10px;
   }
   .rsize{
     resize: none;
     height: 10px;
+  }
+
+
+
+  mat-form-field{
+    width:100%;
   }

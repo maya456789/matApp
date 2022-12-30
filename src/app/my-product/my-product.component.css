@@ -3,6 +3,11 @@ table {
     width: 100%;
   }
 
+  .tabwrap{
+    width: 100%;
+  overflow-x: auto;
+  }
+
   .mat-form-field {
     font-size: 14px;
     width: 100%;

@@ -9,68 +9,79 @@
 
 
 
+
+
+
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayout.xs="column">
+     <div fxFlex="80" fxFlex.lt-sm="100" >
   <mat-card class="example-card">
-
     <mat-toolbar color="primary">Add Product</mat-toolbar>
-    <mat-card-content>
-        <mat-divider ></mat-divider>
-        <form [formGroup]="productData">
-        <table>
+    <mat-divider ></mat-divider>
+    <mat-card-content class="mtop">
 
-        <tr fxLayout="column" fxLayout.gt-xs="row" >
-        <td >
-            <mat-form-field appearance="outline">
-              <mat-label>Add Name field</mat-label>
-              <input matInput placeholder="Product Name" formControlName="product_name">
+      <form [formGroup]="productData">
+        <div fxLayout="row wrap" fxLayoutGap="10px grid">
+        <div fxFlex="50" fxFlex.lt-sm="100"  >
+          <mat-form-field appearance="outline" >
+            <mat-label>Add Category field</mat-label>
+            <input matInput placeholder="Product Category"  formControlName="product_category">
 
-            </mat-form-field>
-        </td>
-          <td>
-            <mat-form-field appearance="outline">
-              <mat-label>Add Unit field</mat-label>
-              <input matInput placeholder="Product Unit" formControlName="product_unit">
+          </mat-form-field>
 
-            </mat-form-field>
-        </td>
-        </tr>
-        <tr fxLayout="column" fxLayout.gt-xs="row">
-            <td>
-                <mat-form-field appearance="outline">
-                  <mat-label>Add Category field</mat-label>
-                  <input matInput placeholder="Product Category" formControlName="product_category">
+        </div>
 
-                </mat-form-field>
-            </td>
-              <td>
-                <mat-form-field appearance="outline">
-                  <mat-label>Sale Price field</mat-label>
-                  <input matInput placeholder="Add Sale Price" formControlName="product_sale_price">
+        <div fxFlex="50" fxFlex.lt-sm="100" >
+          <mat-form-field appearance="outline" >
+            <mat-label>Add Name field</mat-label>
+            <input matInput placeholder="Product Name"  formControlName="product_name">
 
-                </mat-form-field>
-            </td>
-            </tr>
-            <tr fxLayout="column" fxLayout.gt-xs="row">
-                <td>
-                    <mat-form-field appearance="outline">
-                      <mat-label>MRP field</mat-label>
-                      <input matInput placeholder="Add MRP" formControlName="product_mrp">
+          </mat-form-field>
 
-                    </mat-form-field>
-                </td>
-          <td>
-            <mat-form-field appearance="outline">
-              <mat-label>Add Description field</mat-label>
-              <textarea matInput class="rsize" placeholder="Add Description" formControlName="product_description"></textarea>
+        </div>
 
-            </mat-form-field>
-        </td>
-        </tr>
-        </table>
-        </form>
-        <mat-divider ></mat-divider>
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field appearance="outline" >
+            <mat-label>Add Unit field</mat-label>
+            <input matInput placeholder="Product Unit"  formControlName="product_unit">
+
+          </mat-form-field>
+
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100"  >
+          <mat-form-field appearance="outline">
+            <mat-label>Add Description field</mat-label>
+            <textarea matInput class="rsize" placeholder="Add Description" formControlName="product_description"></textarea>
+
+          </mat-form-field>
+
+        </div>
+
+         <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field appearance="outline" >
+            <mat-label>Add MRP field</mat-label>
+            <input matInput placeholder="mrp"  formControlName="product_mrp">
+
+          </mat-form-field>
+
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field appearance="outline" >
+            <mat-label>Add Sale Price </mat-label>
+            <input matInput placeholder="Sale price"  formControlName="product_sale_price">
+
+          </mat-form-field>
+
+        </div>
+        </div>
+      </form>
+      <mat-divider ></mat-divider>
         <mat-card-actions align="end">
             <button type="button" (click)="productFormData(productData)" mat-raised-button color="primary">Add</button>
         </mat-card-actions>
     </mat-card-content>
-  </mat-card>
 
+  </mat-card>
+     </div>
+  </div>

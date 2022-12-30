@@ -2,10 +2,12 @@
 
 
 
-<div class="mat-elevation-z8">
+<div >
+  <div  class="tabwrap" >
   <table mat-table [dataSource]="dataSource">
 
     <!-- Position Column -->
+
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> No. </th>
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
@@ -58,4 +60,5 @@
                  showFirstLastButtons
                  aria-label="Select page of periodic elements">
   </mat-paginator>
+</div>
 </div>

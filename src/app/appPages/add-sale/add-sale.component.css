@@ -1,12 +1,29 @@
 
 table{
-    width:90%;
+    width:100%;
     height:50%;
-    margin:20px;
-    text-align: center;
+    overflow-x: auto;
+
+}
+.tabwrap{
+  width: 100%;
+overflow-x: auto;
 }
 
 h2{
     margin:20px;
     text-decoration: underline;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-align{
+  justify-content: center;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
 }

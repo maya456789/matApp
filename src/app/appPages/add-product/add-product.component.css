@@ -8,6 +8,18 @@
     margin-top: 30px;
   }
 
+  .mtop{
+    margin-top: 40px;
+  }
+
+mat-toolbar{
+  margin-bottom: 20px;
+}
+
+  input{
+    width:100%;
+  }
+
   table,tr,td{
 
     padding-right:30px;
