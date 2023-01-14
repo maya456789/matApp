@@ -1,13 +1,13 @@
 
 <div fxLayoutAlign="center center" fxFlexFill class="main-div"> <!-- Place the card to center-->
-    
-        <mat-card fxFlex="25" > <!--Using fxFlex, card taking 25% of the screen -->
+
+        <mat-card fxFlex="25"  fxFlex.lt-sm="80"> <!--Using fxFlex, card taking 25% of the screen -->
         <mat-toolbar color="primary">Login page</mat-toolbar>
-        <form [formGroup]="formData" (ngSubmit)="checkUser(formData)" fxLayoutAlign="stretch" fxLayout="column" class="login-padd"> 
+        <form [formGroup]="formData" (ngSubmit)="checkUser(formData)" fxLayoutAlign="stretch" fxLayout="column" class="login-padd">
             <mat-form-field >
               <mat-label>Add user</mat-label>
               <input matInput placeholder="User Name" formControlName="userName" >
-             
+
             </mat-form-field>
             <div *ngIf="isFormSubmitted && formData.controls['userName'].errors && !formData.valid">
               <div style="color:red" *ngIf="formData.controls['userName'].errors['required']">
@@ -20,7 +20,7 @@
             <mat-form-field >
             <mat-label>Add Password</mat-label>
               <input matInput placeholder="Password" type="password" formControlName="userPass">
-            
+
             </mat-form-field>
             <div *ngIf="isFormSubmitted && formData.controls['userPass'].errors && !formData.valid">
               <div style="color:red" *ngIf="formData.controls['userPass'].errors['required']">
@@ -30,11 +30,11 @@
                  Max length should be 8 digit.
               </div>
             </div>
-            
-            
+
+
             <button mat-raised-button type="submit">Login</button>
           </form>
     </mat-card>
-    
-</div> 
+
+</div>
 <br>
