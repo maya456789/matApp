@@ -7,6 +7,7 @@ const SERVER_URL = 'http://localhost:8080';
 export const environment = {
   production: false,
 
+  API_BASE: SERVER_URL,
   API_AUTHENTICATEUSER: `${SERVER_URL}/authUser`,
   API_GETUSERDATA:`${SERVER_URL}/authorizeUser`,
   API_ADD_PRODUCT: `${SERVER_URL}/addStock`,

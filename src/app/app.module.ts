@@ -27,7 +27,8 @@ import { AddPurchaseComponent } from './appPages/add-purchase/add-purchase.compo
 import { AddSaleComponent } from './appPages/add-sale/add-sale.component';
 import { AddCategoryComponent } from './appPages/add-category/add-category.component';
 import { AvailableStockComponent } from './appPages/available-stock/available-stock.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptorService } from './appServices/jwt-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     AddSaleComponent,
     AddCategoryComponent,
     AvailableStockComponent
-    
+
   ],
   imports: [
     BrowserModule,
@@ -62,10 +63,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatDialogModule,
     MatCardModule
-  
+
   ],
-  providers: [],
-  
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
