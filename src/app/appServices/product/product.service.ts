@@ -31,7 +31,7 @@ export class ProductService {
   public deleteProduct(prodId:any):Observable<any>{
     console.log("pid at server :",prodId);
 
-    return this.http.post(`${environment.API_DELET_PRODUCT}`,{prodId}).pipe(
+    return this.http.delete(`${environment.API_DELET_PRODUCT}`+'/'+prodId).pipe(
       map((resp)=>{
         return resp;
       })
