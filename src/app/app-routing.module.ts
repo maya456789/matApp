@@ -11,9 +11,11 @@ import { LoginComponent } from './appPages/login/login.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { MyCartComponent } from './my-cart/my-cart.component';
 import { MyProductComponent } from './my-product/my-product.component';
+import { RegisterComponent } from './appPages/register/register.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
+  {path:'signup',component:RegisterComponent},
   {path:'dashboard',component:HomeComponent,children:[
     {path:'add-product',component:AddProductComponent},
     {path:'add-customer',component:AddCustomerComponent},
@@ -21,7 +23,8 @@ const routes: Routes = [
     {path:'add-purchase',component:AddPurchaseComponent},
     {path:'add-sale',component:AddSaleComponent},
     {path:'available-stock',component:MyProductComponent},
-    {path:'mat-table',component:MyProductComponent}
+    {path:'mat-table',component:MyProductComponent},
+    {path:'cart',component:MyCartComponent}
   ]}
 ];
 

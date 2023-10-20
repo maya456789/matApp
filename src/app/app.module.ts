@@ -29,6 +29,7 @@ import { AddCategoryComponent } from './appPages/add-category/add-category.compo
 import { AvailableStockComponent } from './appPages/available-stock/available-stock.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptorService } from './appServices/jwt-interceptor.service';
+import { RegisterComponent } from './appPages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { JwtInterceptorService } from './appServices/jwt-interceptor.service';
     AddPurchaseComponent,
     AddSaleComponent,
     AddCategoryComponent,
-    AvailableStockComponent
+    AvailableStockComponent,
+    RegisterComponent
 
   ],
   imports: [

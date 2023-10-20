@@ -8,6 +8,7 @@ export const environment = {
 
   API_AUTHENTICATEUSER: `${SERVER_URL}/authUser`,
   API_GETUSERDATA:`${SERVER_URL}/authorizeUser`,
+  API_REGISTERUSER: `${SERVER_URL}/registerUser`,
   API_ADD_PRODUCT: `${SERVER_URL}/addStock`,
   API_GET_PRODUCT: `${SERVER_URL}/getStock`,
   API_ADD_CUSTOMER:`${SERVER_URL}/addCustomer`,

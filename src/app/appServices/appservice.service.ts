@@ -19,7 +19,7 @@ export class AppserviceService {
     public getUserData(userId: number) {
 
       return this.http
-        .get<any>(`${environment.API_GETUSERDATA}/${userId}`, {
+        .get<any>(`${environment.API_GETUSERDATA}`, {
           headers: this.setHeadersAuth(),
         })
         .pipe(

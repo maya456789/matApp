@@ -30,14 +30,28 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
 
-  public login(email: string, password: string) {
-    console.log("Serverside value:",email,password);
+  public login(uname: string, password: string) {
+    console.log("Serverside value:",uname,password);
     return this.http
-      .post<any>(`${environment.API_AUTHENTICATEUSER}`, { email, password })
+      .post<any>(`${environment.API_AUTHENTICATEUSER}`, { uname, password })
       .pipe(
         map((user) => {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem("currentUser", JSON.stringify(user));
+          //this.currentUserSubject.next(user);
+          return user;
+        })
+      );
+  }
+
+  public register(regData:any) {
+    console.log("Serverside value:",regData);
+    return this.http
+      .post<any>(`${environment.API_REGISTERUSER}`, { regData })
+      .pipe(
+        map((user) => {
+          // store user details and jwt token in local storage to keep user logged in between page refreshes
+         // localStorage.setItem("currentUser", JSON.stringify(user));
           //this.currentUserSubject.next(user);
           return user;
         })

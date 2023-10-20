@@ -28,6 +28,14 @@ export class ProductService {
     )
   }
 
+  public cartProduct():Observable<any>{
+    return this.http.get('https://fakestoreapi.com/products').pipe(
+      map((product)=>{
+        return product;
+      })
+    )
+  }
+
   public deleteProduct(prodId:any):Observable<any>{
     console.log("pid at server :",prodId);
 

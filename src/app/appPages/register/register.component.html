@@ -1,0 +1,52 @@
+
+
+<div fxLayoutAlign="center center" fxFlexFill class="main-div"> <!-- Place the card to center-->
+
+  <mat-card fxFlex="25"  fxFlex.lt-sm="80"> <!--Using fxFlex, card taking 25% of the screen -->
+  <mat-toolbar color="primary">Signup page</mat-toolbar>
+  <form [formGroup]="signupData" (ngSubmit)="signupUser(signupData.value)" fxLayoutAlign="stretch" fxLayout="column" class="login-padd">
+      <mat-form-field >
+        <mat-label>Enter username</mat-label>
+        <input matInput placeholder="User Name" formControlName="userName" >
+
+      </mat-form-field>
+      <div *ngIf="isFormSubmitted && signupData.controls['userName'].errors && !signupData.valid">
+        <div style="color:red" *ngIf="signupData.controls['userName'].errors['required']">
+         User name is required.
+        </div>
+
+       </div>
+      <mat-form-field >
+      <mat-label>Enter Password</mat-label>
+        <input matInput placeholder="Password" type="password" formControlName="userPass">
+
+      </mat-form-field>
+      <div *ngIf="isFormSubmitted && signupData.controls['userPass'].errors && !signupData.valid">
+        <div style="color:red" *ngIf="signupData.controls['userPass'].errors['required']">
+          Password is required.
+        </div>
+        <div *ngIf="signupData.controls['userPass'].errors['maxlength']">
+           Max length should be 8 digit.
+        </div>
+      </div>
+      <mat-form-field >
+        <mat-label>Enter Email</mat-label>
+          <input matInput placeholder="Email" type="text" formControlName="email">
+
+        </mat-form-field>
+
+        <div *ngIf="signupData.controls['email'].errors && isFormSubmitted  && !signupData.valid">
+          <p style="color:red" *ngIf="signupData.controls['email'].errors['required']">Email is required</p>
+          <p style="color:red" *ngIf="signupData.controls['email'].errors['pattern']" >Please provide a valid email address</p>
+      </div>
+
+      <button mat-raised-button type="submit">Register</button>
+    </form>
+    <div fxLayoutAlign="center center">
+      <a routerLink="" style="color: purple;text-decoration: none;">Login here..</a>
+    </div>
+</mat-card>
+
+</div>
+<br>
+

@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     public appserviceService: AppserviceService) {
 
     this.formData=this.fbuild.group({
-      userName:['',Validators.compose([Validators.required,Validators.minLength(5)])],
+      userName:['',Validators.compose([Validators.required,])],
       userPass:['',Validators.compose([Validators.required,Validators.maxLength(8)])],
 
     });
@@ -43,13 +43,13 @@ export class LoginComponent implements OnInit {
     this.uname=formData.controls['userName'].value;
     this.pass=formData.controls['userPass'].value;
 
-    if(this.uname =='admin' && this.pass=='admin123'){
-      alert('Login successful');
+    if(formData.valid){
+
       let obj={uname:this.uname,pass:this.pass};
       sessionStorage.setItem("userDetails",JSON.stringify(obj));
      // localStorage.setItem("data","User Data");
      // window.location.href='home';
-     this.rout.navigate(["dashboard"]);
+
 
      this.authenticationService
      .login(this.uname, this.pass)
@@ -57,8 +57,9 @@ export class LoginComponent implements OnInit {
      .subscribe(
        (data) => {
         console.log('Response dt:',data);
+        if(data.message != 'Error' && data!='undefined'){
            this.appserviceService
-           .getUserData(data.userId)
+           .getUserData(data)
            .pipe(first())
            .subscribe(
              (data) => {
@@ -67,17 +68,23 @@ export class LoginComponent implements OnInit {
                this.authenticationService.currentUserDataSubject.next(data);
                setTimeout(() => {
                //  this.ifLoogedInRedirect();
+               this.rout.navigate(["dashboard/add-product"]);
                }, 50);
              },
              (error) => {
               // this.isLoading = false;
               // this.serverSideMessages = error;
+              alert('Please enter valid username and password');
              }
            );
-       },
+       }else{
+        alert('Please enter valid username and password');
+       }
+      },
        (error) => {
        //  this.isLoading = false;
         // this.serverSideMessages = error;
+
        }
      );
     }
